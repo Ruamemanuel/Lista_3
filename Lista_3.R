@@ -13,6 +13,7 @@ z * cpf
 ##Questão 3####
 
 head(mtcars) #importando os dados
+View(mtcars)
 
 dim(mtcars) #número de dimensão da base
 
@@ -27,4 +28,14 @@ mtcars$cyl[4] #4º elemento na variável cyl
 summary(mtcars) # resumo das variáveis 
 
 ##Questão 4####
+install.packages("ffbase", dependencies = TRUE) #instalando pacote
+
+require(ffbase) #carregando pacote 
+
+setwd("./dados_encontro_1_ufpe/") #definindo diretório
+
+TURMAS <- read.csv2.ffdf(file = "TURMAS.CSV",  sep = "|")
+
+
+
 
