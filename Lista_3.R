@@ -88,3 +88,27 @@ boxplot(TURMAS_PE$NU_MATRICULAS)
 plot(TURMAS_PE$NU_MATRICULAS)
 
 barplot(TURMAS_PE$NU_MATRICULAS)
+
+##Questão 6####
+#A
+
+install.packages("ffbase", dependencies = TRUE) #instalando pacote
+
+require(ffbase) #carregando pacote 
+
+setwd('..')
+setwd("./dados_encontro_1_ufpe/")
+
+DOCENTES_NE <- read.csv2(file = "DOCENTES_NORDESTE.CSV",  sep = "|")
+
+View(DOCENTES_NE)
+
+Tabela_Raça <- table(DOCENTES_NE$TP_COR_RACA)
+
+
+Nao_Declarados <- (1240352 * 100 / 2930934)
+Nao_Declarados == #42.31934
+
+#B
+  
+
