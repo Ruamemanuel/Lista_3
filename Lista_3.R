@@ -34,26 +34,26 @@ require(ffbase) #carregando pacote
 
 setwd("./dados_encontro_1_ufpe/") #definindo diretório
 
-TURMAS <- read.csv2.ffdf(file = "TURMAS.CSV",  sep = "|")
+TURMAS <- read.csv2.ffdf(file = "TURMAS.CSV",  sep = "|") #carregando dados
 
-setwd('..')
-setwd("./dados_encontro_1_ufpe/")
+setwd('..') #move wd para nível anterior 
+setwd("./dados_encontro_1_ufpe/") 
 
-save.ffdf(TURMAS, dir = "./TURMAS", overwrite = TRUE)
+save.ffdf(TURMAS, dir = "./TURMAS", overwrite = TRUE) #salvando em formato FFDF
 rm(list =ls())
 
-setwd('..')
+setwd('..') #move wd para nível anterior
 setwd("./dados_encontro_1_ufpe/")
 
-load.ffdf(dir = "./TURMAS/")
+load.ffdf(dir = "./TURMAS/") #carregando a base
 
-TURMAS_PE <-subset(TURMAS, CO_UF==26)
-dim(TURMAS_PE)
+TURMAS_PE <-subset(TURMAS, CO_UF==26) #Filtrando para Pernambuco
+dim(TURMAS_PE) #Conferindo a partir da dimensão se foi feito o filtro
 
-TURMAS_PE <- as.data.frame(TURMAS_PE)
+TURMAS_PE <- as.data.frame(TURMAS_PE) #Transformando em Data Frame
 
-setwd('..')
+setwd('..') #move wd para nível anterior
 setwd("./dados_encontro_1_ufpe/")
 
-save(TURMAS_PE, file = "turmas_pe_censo_escolar_2016.RData")
-View(TURMAS_PE)
+save(TURMAS_PE, file = "turmas_pe_censo_escolar_2016.RData") #Salvando em Rdata
+View(TURMAS_PE) #Conferindo a tabela do filtro
