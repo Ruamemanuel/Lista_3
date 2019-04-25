@@ -60,34 +60,33 @@ View(TURMAS_PE) #Conferindo a tabela do filtro
 
 ##Questão 5####
 setwd('..')
-setwd("./dados_encontro_1_ufpe/")
+setwd("./dados_encontro_1_ufpe/") #puxando o diretório
 
-install.packages("magrittr")
-library(magrittr)
+install.packages("magrittr") #instalando pacote
+library(magrittr) #carregando funções
 
-load("turmas_pe_censo_escolar_2016.RData")
-View(TURMAS_PE)
+load("turmas_pe_censo_escolar_2016.RData") #carregando dados 
+View(TURMAS_PE) #analisando dados
 
-library(tidyverse)
+library(tidyverse) 
 
-setwd('..')
-setwd("./dados_encontro_1_ufpe/")
+setwd('..') 
+setwd("./dados_encontro_1_ufpe/") #puxando diretório
 
-load("turmas_pe_censo_escolar_2016.RData")
+load("turmas_pe_censo_escolar_2016.RData") #carregando dados
 
-filter(N)
 
-mean(TURMAS_PE$NU_MATRICULAS)
+mean(TURMAS_PE$NU_MATRICULAS) #MÉDIA DE MATRÍCULAS
 
-median(TURMAS_PE$NU_MATRICULAS)
+median(TURMAS_PE$NU_MATRICULAS) #MEDIANA MATRICULAS
 
-sd(TURMAS_PE$NU_MATRICULAS)
+sd(TURMAS_PE$NU_MATRICULAS) #DESVIO PADRÃO
 
-boxplot(TURMAS_PE$NU_MATRICULAS)
+boxplot(TURMAS_PE$NU_MATRICULAS) #BOXPLOT
 
-plot(TURMAS_PE$NU_MATRICULAS)
+plot(TURMAS_PE$NU_MATRICULAS) #PLOT
 
-barplot(TURMAS_PE$NU_MATRICULAS)
+barplot(TURMAS_PE$NU_MATRICULAS) #BARPLOT
 
 ##Questão 6####
 #A
@@ -97,18 +96,33 @@ install.packages("ffbase", dependencies = TRUE) #instalando pacote
 require(ffbase) #carregando pacote 
 
 setwd('..')
-setwd("./dados_encontro_1_ufpe/")
+setwd("./dados_encontro_1_ufpe/") #puxando repositório
 
-DOCENTES_NE <- read.csv2(file = "DOCENTES_NORDESTE.CSV",  sep = "|")
+DOCENTES_NE <- read.csv2(file = "DOCENTES_NORDESTE.CSV",  sep = "|") #carregando dados
 
-View(DOCENTES_NE)
+View(DOCENTES_NE) #analisando tabela
 
-Tabela_Raça <- table(DOCENTES_NE$TP_COR_RACA)
+Tabela_Raça <- table(DOCENTES_NE$TP_COR_RACA) #analisando os dados da coluna
 
 
-Nao_Declarados <- (1240352 * 100 / 2930934)
-Nao_Declarados == #42.31934
+Nao_Declarados <- (1240352 * 100 / 2930934) #calculando porcentagem
+Nao_Declarados == #42.31934 #resultado
 
 #B
   
+  install.packages("ffbase", dependencies = TRUE) #instalando pacote
 
+require(ffbase) #carregando pacote 
+ 
+getwd()
+setwd("./dados_encontro_1_ufpe/") #puxando diretório
+
+View(DOCENTES_NE) #analisando dados
+
+Tabela_Raça <- table(DOCENTES_NE$TP_COR_RACA) #analisando dados da coluna
+
+Pardos_Pretos <- (119972 + 968682) #somando o valor de pardos e pretos 
+Pardos_Pretos #resultado
+
+Porcentagem_Pardos_Pretos <- (Pardos_Pretos * 100 / 2930934) #calculando a porcentagem
+Porcentagem_Pardos_Pretos #resultado
