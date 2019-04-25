@@ -57,3 +57,34 @@ setwd("./dados_encontro_1_ufpe/")
 
 save(TURMAS_PE, file = "turmas_pe_censo_escolar_2016.RData") #Salvando em Rdata
 View(TURMAS_PE) #Conferindo a tabela do filtro
+
+##Questão 5####
+setwd('..')
+setwd("./dados_encontro_1_ufpe/")
+
+install.packages("magrittr")
+library(magrittr)
+
+load("turmas_pe_censo_escolar_2016.RData")
+View(TURMAS_PE)
+
+library(tidyverse)
+
+setwd('..')
+setwd("./dados_encontro_1_ufpe/")
+
+load("turmas_pe_censo_escolar_2016.RData")
+
+filter(N)
+
+mean(TURMAS_PE$NU_MATRICULAS)
+
+median(TURMAS_PE$NU_MATRICULAS)
+
+sd(TURMAS_PE$NU_MATRICULAS)
+
+boxplot(TURMAS_PE$NU_MATRICULAS)
+
+plot(TURMAS_PE$NU_MATRICULAS)
+
+barplot(TURMAS_PE$NU_MATRICULAS)
