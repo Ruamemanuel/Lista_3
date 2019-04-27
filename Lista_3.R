@@ -39,13 +39,10 @@ TURMAS <- read.csv2.ffdf(file = "TURMAS.CSV",  sep = "|") #carregando dados
 setwd('..') #move wd para nível anterior 
 setwd("./dados_encontro_1_ufpe/") 
 
-save.ffdf(TURMAS, dir = "./TURMAS", overwrite = TRUE) #salvando em formato FFDF
-rm(list =ls())
+save.ffdf(TURMAS, dir = "./TURMAS", overwrite = TRUE) #salvando em formato FFDFrm(list =ls())
 
 setwd('..') #move wd para nível anterior
 setwd("./dados_encontro_1_ufpe/")
-
-load.ffdf(dir = "./TURMAS/") #carregando a base
 
 TURMAS_PE <-subset(TURMAS, CO_UF==26) #Filtrando para Pernambuco
 dim(TURMAS_PE) #Conferindo a partir da dimensão se foi feito o filtro
@@ -68,6 +65,7 @@ library(magrittr) #carregando funções
 load("turmas_pe_censo_escolar_2016.RData") #carregando dados 
 View(TURMAS_PE) #analisando dados
 
+install.packages("tidyverse")
 library(tidyverse) 
 
 setwd('..') 
