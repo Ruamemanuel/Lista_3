@@ -102,9 +102,12 @@ View(DOCENTES_NE) #analisando tabela
 
 Tabela_Raça <- table(DOCENTES_NE$TP_COR_RACA) #analisando os dados da coluna
 
+DOCENTES_NE <- as.data.frame(DOCENTES_NE)
 
 Nao_Declarados <- (1240352 * 100 / 2930934) #calculando porcentagem
 Nao_Declarados == #42.31934 #resultado
+
+  prop.table(table(DOCENTES_NE$TP_COR_RACA))*100 #Outra forma de encontrar o resultado
 
 #B
   
@@ -124,3 +127,5 @@ Pardos_Pretos #resultado
 
 Porcentagem_Pardos_Pretos <- (Pardos_Pretos * 100 / 2930934) #calculando a porcentagem
 Porcentagem_Pardos_Pretos #resultado
+
+prop.table(table(DOCENTES_NE$TP_COR_RACA))*100 #outra forma de encontrar os resultados
