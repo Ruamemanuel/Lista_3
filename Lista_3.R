@@ -106,7 +106,7 @@ docentes_pe <- as.data.frame(docentes_pe) #transformando em dataframe
 
 dim(docentes_pe) #buscando a dimensão
 
-table(docentes_pe$TP_COR_RACA) #extraindo a tabela
+table(docentes_pe$TP_COR_RACA) #vizualizando a tabela
 
 prop.table(table(docentes_pe$TP_COR_RACA))*100 #encontrando a porcentagem
 
@@ -123,12 +123,12 @@ ggplot(docentes_pe, aes(prop.table(docentes_pe$TP_COR_RACA)*100))+geom_bar() #ou
 
 require(ffbase) #carregando pacote 
  
-getwd()
+
 setwd("./dados_encontro_1_ufpe/") #puxando diretório
 
 View(DOCENTES_NE) #analisando dados
 
-prop.table(table(docentes_pe$TP_COR_RACA))*100 #outra forma de encontrar os resultados
+prop.table(table(docentes_pe$TP_COR_RACA))*100 #encontrando a porcentagem
 
 Soma_pretos_pardos <- 3.6 + 27.8 #soma das porcentagens de pretos e pardos
 Soma_pretos_pardos #resultado da soma
