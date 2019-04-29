@@ -96,18 +96,26 @@ require(ffbase) #carregando pacote
 setwd('..')
 setwd("./dados_encontro_1_ufpe/") #puxando repositório
 
-DOCENTES_NE <- read.csv2(file = "DOCENTES_NORDESTE.CSV",  sep = "|") #carregando dados
+DOCENTES_NE <- read.csv2(file = "DOCENTES_NORDESTE.csv",  sep = "|") #carregando dados
 
 View(DOCENTES_NE) #analisando tabela
 
-Tabela_Raça <- table(DOCENTES_NE$TP_COR_RACA) #analisando os dados da coluna
+docentes_pe <- subset(DOCENTES_NE, CO_UF == "26") #extraindo os docentes de PE
 
-DOCENTES_NE <- as.data.frame(DOCENTES_NE)
+docentes_pe <- as.data.frame(docentes_pe) #transformando em dataframe
 
-Nao_Declarados <- (1240352 * 100 / 2930934) #calculando porcentagem
-Nao_Declarados == #42.31934 #resultado
+dim(docentes_pe) #buscando a dimensão
 
-  prop.table(table(DOCENTES_NE$TP_COR_RACA))*100 #Outra forma de encontrar o resultado
+table(docentes_pe$TP_COR_RACA) #extraindo a tabela
+
+prop.table(table(docentes_pe$TP_COR_RACA))*100 #encontrando a porcentagem
+
+plot(prop.table(table(docentes_pe$TP_COR_RACA))*100) #gerando gráficos por brincadeira
+
+require(tidyverse) #requerendo tidyverse
+
+ggplot(docentes_pe, aes(prop.table(docentes_pe$TP_COR_RACA)*100))+geom_bar() #outro gráfico
+
 
 #B
   
@@ -120,12 +128,7 @@ setwd("./dados_encontro_1_ufpe/") #puxando diretório
 
 View(DOCENTES_NE) #analisando dados
 
-Tabela_Raça <- table(DOCENTES_NE$TP_COR_RACA) #analisando dados da coluna
+prop.table(table(docentes_pe$TP_COR_RACA))*100 #outra forma de encontrar os resultados
 
-Pardos_Pretos <- (119972 + 968682) #somando o valor de pardos e pretos 
-Pardos_Pretos #resultado
-
-Porcentagem_Pardos_Pretos <- (Pardos_Pretos * 100 / 2930934) #calculando a porcentagem
-Porcentagem_Pardos_Pretos #resultado
-
-prop.table(table(DOCENTES_NE$TP_COR_RACA))*100 #outra forma de encontrar os resultados
+Soma_pretos_pardos <- 3.6 + 27.8 #soma das porcentagens de pretos e pardos
+Soma_pretos_pardos #resultado da soma
